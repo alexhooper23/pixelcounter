@@ -3,6 +3,14 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <title>&#182;ixel&#x2184;ounter</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9YXVLJTMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S9YXVLJTMQ');
+</script>
     </head>
     <body>
         <div id="mn-wrp">
@@ -43,7 +51,7 @@
             <div class="c">
                 <span>
                     <div class="center">round&nbsp;<span id="rnd">01</span>/<span id="tlRd"></span></div>
-                    <div class="center" id="plyTxt">player&nbsp;<span id="plyrnm">01</span></div>
+                    <div class="center" id="plyTxt">player&nbsp;<span id="plyrnm">01</span>/<span id="tlply">01</span></div>
                     <div class="center">score&nbsp;<span id="pts">000</span></div>
                     <div class="center" id="tmrTxt">time&nbsp;<span id="tmr">000</span></div>
                     <div class="center">location:</div>
@@ -64,11 +72,12 @@
         <div id="sc-wrp">
             <div id="sc-cnt">
                 <div class="center"><span>result</span></div>
-                <div id="rst"></div>
-                <div class="btn" onclick="location.reload()">again</div>
+                <div id="rst" class="center"></div>
+                <div class="btn" onclick="location.reload()" class="center">again</div>
             </div>
         </div>
         <div class="center" style="position: absolute; bottom: 0;" id="ftr">all content &copy;2022 Alex Hooper.</div>
     <script type="text/javascript" src="scripts.js"></script>
+    
     </body>
 </html>

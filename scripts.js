@@ -76,13 +76,11 @@ function theme() {
 		document.getElementsByClassName("btn")[i].style.border = '1px solid ' + p;
 		}
 }
-document.getElementById("plyrnm").innerHTML = 1
+document.getElementById("plyrnm").innerHTML = String(1).padStart(2,"0")
 
 
 //Change the amount of time each player has
  function tmrChg() {
-	console.log("CHECK")
-	console.log(tmrChk.checked)
 	if (tmrChk.checked == true) {
 		tmrMen.style.visibility = "visible"
 	} else {
@@ -126,8 +124,6 @@ rndUpdt("+")
 // Hide setup container, show regular container and set gamestart trigger to true
 function startGame() {
 	document.getElementById("mn-wrp").style.opacity = 0;
-	
-	console.log(tmrChk.checked)
 	if (tmrChk.checked == false) {
 		document.getElementById("tmrTxt").style.display = 'none';
 	} else {
@@ -136,6 +132,7 @@ function startGame() {
 	if (tlplys == 1) {
 		document.getElementById("plyTxt").style.display = 'none';
 	}
+	document.getElementById("tlply").innerHTML = String(tlplys).padStart(2,"0");
 	for (var i = 0; i < tlplys; i++) {score.push(0)}
 	setTimeout(function() {
 		document.getElementById("mn-wrp").style.display = 'none';
@@ -194,7 +191,6 @@ function elemVis(x = 0) {
 
 // Set position of circles
 function setRandomPos() {
-	console.log("posTrigger")
 	// Generate random x and y coordinates for point
 	var x = rndNum(mxWdth - crclDm[0])
 	var y = rndNum(mxHght - crclDm[0])
@@ -209,14 +205,12 @@ function setRandomPos() {
 	bgcrcl.style.top = y.toString() + "px"
 	// Show the position of the point onsceen
     psTxt.innerHTML = "(" + String(x + bgCrclDm/2).padStart(4,"0") + ", " + String(y + bgCrclDm/2).padStart(4,"0") + ")"
-	console.log('end')
 	if (tmrChk.checked == true) {
 		var cntTmt = tmr;
-		console.log(tmr)
+		document.getElementById("tmr").innerHTML = String(cntTmt).padStart(3,"0")
 		intCnt = setInterval(function() {
 			cntTmt -= 1
 			document.getElementById("tmr").innerHTML = String(cntTmt).padStart(3,"0")
-			console.log(cntTmt)
 		}, 1000)
 		tmOut  = setTimeout(function() {
 			click()
@@ -231,11 +225,8 @@ function click(event = 'none') {
 	// Check to make sure the game isn't over and the previous circles are offscreen
 	if (timeout == false && rnd <= tlrnd && gameStart == true) {
 		if (tmrChk.checked == true) {
-			console.log(tmOut)
 			clearTimeout(tmOut);
-			console.log(tmOut)
 			clearInterval(intCnt)
-			console.log(intCnt)
 		}
 		// Hide cursor for reveal
 		document.body.style.cursor = "none"
@@ -249,7 +240,6 @@ function click(event = 'none') {
 			usrClkCrcl.style.left = (event.pageX - 5) + "px";
 			document.getElementById("clkX").innerHTML = String(event.pageX).padStart(4,"0");
 			document.getElementById("clkY").innerHTML = String(event.pageY).padStart(4,"0");
-			console.log("event pos")
 		} else {
 			usrClkCrcl.style.top = "0px";
 			usrClkCrcl.style.left =  "0px";
@@ -281,13 +271,18 @@ function click(event = 'none') {
 					document.getElementById("gm-cnt").style.display = 'none';
 					document.getElementById("sc-wrp").style.display = 'grid';
 					document.body.style.cursor = "pointer"
+					if (tlplys > 1) {
 					for (var i = 0; i < tlplys; i++) {
 						document.getElementById("rst").innerHTML += String(i + 1).padStart(2,"0") + "&nbsp;-&#9;" + String(score[i]).padStart(3,"0") + "<br>"
+					}
+					} else {
+						document.getElementById("rst").innerHTML += "<span class='center'>" + String(score[0]).padStart(3,"0") + "</span>"
 					}
 			}
 			// Increase round if there is only one player
 			if (tlplys == 1) {
 				rnd += 1;
+				document.getElementById("rnd").innerHTML = String(rnd).padStart(2,"0");
 			// Handling if there is only one player
 			} else {
 				if (intl_ply + 1 != tlplys) {
