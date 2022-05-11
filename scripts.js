@@ -93,9 +93,17 @@ document.getElementById("plyrnm").innerHTML = String(1).padStart(2,"0")
 }
 function tmrUpdt(neg) {
 	if (neg == "+" && tmr != 120) {
-		tmr += 1
+		if (tmr < 10) {
+			tmr += 1
+		} else {
+			tmr += 5
+		}
 	} else if (neg == "-" && tmr != 1) {
-		tmr -= 1;
+		if (tmr > 10) {
+		tmr -= 5;
+		} else {
+			tmr -= 1;
+		}
 	}
 	document.getElementById("tmrLbl").innerHTML = String(tmr).padStart(3, "0");
 }
@@ -113,10 +121,18 @@ plyUpdt("+")
 
 //Change the number of rounds on setup screen
 function rndUpdt(neg) {
-	if (neg == "+" && tlrnd != 99) {
+	if (neg == "+" && tlrnd != 95) {
+		if (tlrnd < 10) {
 		tlrnd += 1
+		} else {
+			tlrnd += 5
+		}
 	} else if (neg == "-" && tlrnd != 1) {
-		tlrnd -= 1;
+		if (tlrnd > 10) {
+			tlrnd -= 5;
+		} else {
+			tlrnd -= 1;
+		}
 	}
 	// Set number of rounds on setup screen
 	document.getElementById("rnds").innerHTML = String(tlrnd).padStart(2, "0");
