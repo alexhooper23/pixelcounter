@@ -1,4 +1,8 @@
 // all code ©2022 alex hooper
+document.addEventListener('contextmenu', event => event.preventDefault());
+window.addEventListener("keydown",  function (e) { e.preventDefault(); }, true);
+window.addEventListener("keyup",    function (e) { e.preventDefault(); }, true);
+window.addEventListener("keypress", function (e) { e.preventDefault(); }, true);
 var //Declare variables 
 psTxt = document.getElementById("posTxt"),
 pointerX = -1,
