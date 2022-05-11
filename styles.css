@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+body, html {
+    padding: 0;
+    margin: none;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    user-select: none;
+    transition: 0.3s background-color, 0.3s color;
+}
+#gm-cnt {
+    cursor: crosshair;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    display: none;
+}
+.c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+#posTxt {
+    font-size: 150px;
+}
+.bx {
+    border-radius: 1000px;
+    min-width: 15px;
+    position: absolute;
+    text-align: center;
+    opacity: 0.8;
+}
+.bx1 {
+    background-color: red;
+}
+.bx2 {
+    background-color: rgb(255, 102, 102);
+}
+
+.bx3 {
+    background-color: pink;
+}
+#usrCrcl {
+    min-width: 10px;
+    min-height: 10px;
+    background-color: black;
+    border-radius: 1000px;
+    position: absolute;
+}
+#usrCrclWrp {
+    position: absolute;
+}
+#usrCrd {
+    margin-left: 10px;
+}
+#mn-wrp, #sc-wrp {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+#mn-cnt, #sc-cnt {
+    grid-row: 2/2;
+    grid-column: 2/2;
+}
+.center {
+    width: 100%;
+    text-align: center;
+}
+.dfCr {
+    cursor: pointer;
+}
+#mn-wrp, #gm-cnt {
+    transition: opacity 0.3s ease-out;
+}
+#mn-wrp {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-delay: 0.3;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.btn {
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+.mxCrd {
+    position: absolute;
+}
+#mxBtRt {
+    right: 5px;
+    bottom: 5px;
+}
+#mxTpRt {
+    top: 5;
+    right: 5px;
+}
+#mxBtLt {
+    bottom: 5px;
+    left: 5px;
+}
+#sc-wrp {
+    display: none;
+}
+#tmrDur {
+    visibility: hidden;
+}

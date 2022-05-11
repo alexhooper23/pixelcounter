@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>&#182;ixel&#x2184;ounter</title>
+    </head>
+    <body>
+        <div id="mn-wrp">
+            <div id="mn-cnt">
+                <div class="center" style="font-weight: bold; text-decoration: underline;">&#182;ixel&#x2184;ounter</div>
+                <div class="center">round
+                    <span>
+                        <span onclick="rndUpdt('-')" class="dfCr">-</span>
+                        <span id="rnds">00</span>
+                        <span onclick="rndUpdt('+')" class="dfCr">+</span>
+                    </span>
+                </div>
+                <div class="center">player
+                    <span>
+                        <span onclick="plyUpdt('-')" class="dfCr">-</span>
+                        <span id="plys">00</span>
+                        <span onclick="plyUpdt('+')" class="dfCr">+</span>
+                    </span>
+                    <div class="center">timer
+                        <input type="checkbox" id="tmrAct" onchange="tmrChg()">
+                        <span id="tmrDur">
+                            <span onclick="tmrUpdt('-')" class="dfCr">-</span>
+                            <span id="tmrLbl">001</span>
+                            <span onclick="tmrUpdt('+')" class="dfCr">+</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="center">
+                    <span>
+                        <span>dark&nbsp;<input type="checkbox" id="thm_cg" onchange="theme()"></span>
+                    </span>
+                </div>
+                <div class="center btn" id="st_gm" onclick="startGame()">start</div>
+            </div>
+        </div>
+        <div id="gm-cnt">
+            <span>(0000,0000)</span>
+            <div class="c">
+                <span>
+                    <div class="center">round&nbsp;<span id="rnd">01</span>/<span id="tlRd"></span></div>
+                    <div class="center" id="plyTxt">player&nbsp;<span id="plyrnm">01</span></div>
+                    <div class="center">score&nbsp;<span id="pts">000</span></div>
+                    <div class="center" id="tmrTxt">time&nbsp;<span id="tmr">000</span></div>
+                    <div class="center">location:</div>
+                    <div id="posTxt">(0000,0000)</div>
+                </span>    
+            </div> 
+            <span class="bx bx3" onclick="scr('bg')"></span>
+            <span class="bx bx2" onclick="scr('md')"></span>
+            <span class="bx bx1" onclick="scr('sm')"></span>
+            <span id="usrCrclWrp">
+                <span id="usrCrcl"></span>
+                <span id="usrCrd">(<span id="clkX">0000</span>,&nbsp;<span id="clkY">0000</span>)</span>
+            </span>
+            <span class="mxCrd" id="mxBtRt">(<span class="screenX"></span>,&nbsp;<span class="screenY"></span>)</span>
+            <span class="mxCrd" id="mxBtLt">(0000,&nbsp;<span class="screenY"></span>)</span>
+            <span class="mxCrd" id="mxTpRt">(<span class="screenX"></span>,&nbsp;0000)</span>
+        </div>
+        <div id="sc-wrp">
+            <div id="sc-cnt">
+                <div class="center"><span>result</span></div>
+                <div id="rst"></div>
+                <div class="btn" onclick="location.reload()">again</div>
+            </div>
+        </div>
+        <div class="center" style="position: absolute; bottom: 0;" id="ftr">all content &copy;2022 Alex Hooper.</div>
+    <script type="text/javascript" src="scripts.js"></script>
+    </body>
+</html>
