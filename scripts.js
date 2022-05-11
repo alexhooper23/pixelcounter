@@ -275,6 +275,7 @@ function click(event = 'none') {
 					document.getElementById("gm-cnt").style.display = 'none';
 					document.getElementById("sc-wrp").style.display = 'grid';
 					document.body.style.cursor = "pointer"
+					gameStart = false
 					if (tlplys > 1) {
 					for (var i = 0; i < tlplys; i++) {
 						document.getElementById("rst").innerHTML += String(i + 1).padStart(2,"0") + "&nbsp;-&#9;" + String(score[i]).padStart(3,"0") + "<br>"
