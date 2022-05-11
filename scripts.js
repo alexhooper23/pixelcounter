@@ -1,8 +1,8 @@
 // all code ©2022 alex hooper
 document.addEventListener('contextmenu', event => event.preventDefault());
-window.addEventListener("keydown",  function (e) {if (e.key[0] != "F") {e.preventDefault(); }}, true);
-window.addEventListener("keyup",    function (e) {if (e.key[0] != "F") {e.preventDefault(); }}, true);
-window.addEventListener("keypress", function (e) {if (e.key[0] != "F") {e.preventDefault(); }}, true);
+window.addEventListener("keydown",  function (e) {if (e.key[0] != "F" || e.key == "F12") {e.preventDefault(); }}, true);
+window.addEventListener("keyup",    function (e) {if (e.key[0] != "F" || e.key == "F12") {e.preventDefault(); }}, true);
+window.addEventListener("keypress", function (e) {if (e.key[0] != "F" || e.key == "F12") {e.preventDefault(); }}, true);
 var //Declare variables 
 psTxt = document.getElementById("posTxt"),
 pointerX = -1,
