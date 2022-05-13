@@ -175,20 +175,9 @@ document.getElementsByClassName("screenY")[i].innerHTML = mxHght;
 }
 setCrds()
 
-function smlScrn() {
-	if (window.innerWidth < 700 || window.innerHeight < 500) {
-		document.getElementById("dsp-sm").style.display = 'grid';
-		document.getElementById("act-cnt").style.display = 'none';
-	} else {
-		document.getElementById("dsp-sm").style.display = 'none';
-		document.getElementById("act-cnt").style.display = 'inline-block';
-	}
-}
-smlScrn()
 window.addEventListener("resize",function() {
  	mxWdth = window.innerWidth;
 	mxHght = window.innerHeight;
-	smlScrn()
 	setCrds()
 })
 
