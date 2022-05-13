@@ -58,7 +58,7 @@ body, html {
 #usrCrd {
     margin-left: 10px;
 }
-#mn-wrp, #sc-wrp {
+#mn-wrp, #sc-wrp, #dsp-sm {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr auto 1fr;
@@ -120,4 +120,7 @@ body, html {
 }
 #ftr {
     color: #cecece;
+}
+#dsp-sm {
+    display: none;
 }
